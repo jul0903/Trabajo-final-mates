@@ -1,12 +1,13 @@
 float radiPJ = 14;
 float radiAim = 4;
-float alfa = 0.01;
+float alfa = 0.3;
 float PJsize;
 PVector PJTec;
 PVector PJ;
 PVector aim;
 PVector aimOnClick;
 PVector bullet;
+int lives = 3;
 
 void setPJ(){
  PJ = new PVector(0.0, 0.0); 

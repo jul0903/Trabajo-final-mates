@@ -11,7 +11,7 @@ class civiles{
     for(int i=0;i<6;i++){
       pos_c[i] = new PVector(random(0.0, 800.0), random(0.0, 800.0));
     }
-    color_c = color(220, 118, 51);
+    color_c = color(189, 84, 18);
     size_c = 12.0;
   }
   
