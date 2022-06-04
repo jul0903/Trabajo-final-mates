@@ -26,5 +26,11 @@ void draw() {
   playerShoot();
   civil.printCiviles();
   robot.printRobots();
-  LUT_kill_enemy();
+  
+  //LUT_kill_enemy();
+  if( (key == 'e' || key == 'E') && !mousePressed){
+    push();
+    LUT_calor();
+    pop();
+  }
 }

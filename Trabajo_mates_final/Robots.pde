@@ -10,7 +10,7 @@ class robots{
     for(int i=0;i<6;i++){
       pos_r[i] = new PVector(random(0.0, 800.0), random(0.0, 800.0));
     }
-    color_r = color(220, 117, 50);
+    color_r = color(189, 86, 20);
     size_r = 12.0;
   }
   
