@@ -33,8 +33,6 @@ void LUT_calor(){
       float b= blue(colorPixel);
 
       //3.- Processar, canviar, modificar... els components
-      //Y es la lluminancia (model YUV de color)
-      float y= 0.299*r + 0.587*g + 0.114*b;
       
       if(colorPixel == color(189, 84, 18)){ // civiles
         r = 236;
@@ -47,7 +45,7 @@ void LUT_calor(){
         b = 219;
       }
       
-      if(colorPixel == color(128, 139, 150)){ // fondo
+      if(colorPixel == color(245, 238, 248)){ // fondo
        r = 46;
        g = 204;
        b = 113;
@@ -57,6 +55,12 @@ void LUT_calor(){
         r = 241;
         g = 148;
         b = 138;
+      }
+      
+      if(colorPixel == color(20, 90, 50)){ // pajaros
+        r = 52;
+        g = 152;
+        b = 219;  
       }
 
       //4.- Gravar el nou color al seu pixel associat
