@@ -15,8 +15,9 @@ class robots {
   }
 
   void printRobots() { // Arreglar desaparecer cuando matas
+  int posColi=0;
     for (int i=0; i < 6; i++) {
-      if(pos_r[i] != robotDamage(pos_r)) {
+      if(i != robotDamage(posColi)) {
       fill(color_r);
       stroke(color_r);
       ellipse(pos_r[i].x, pos_r[i].y, size_r, size_r);
@@ -24,13 +25,11 @@ class robots {
     }
   }
 
-  PVector robotDamage(PVector [] posRobot) {
+  int robotDamage(int pos) {
     int i = 0;
     for (; i < 6; i++) {
-      posRobot[i].x = pos_r[i].x;
-      posRobot[i].y = pos_r[i].y;
-      float vectorX = bullet.x - posRobot[i].x;
-      float vectorY = bullet.y - posRobot[i].y;
+      float vectorX = bullet.x - pos_r[i].x;
+      float vectorY = bullet.y - pos_r[i].y;
 
       float modulo= sqrt(pow(vectorX, 2)+pow(vectorY, 2));
       fill(255);
@@ -38,13 +37,12 @@ class robots {
       if (modulo<=(size_r + radiPJ)) { // Si se cumple hay colision
         // Mostramos un mensaje
         LUT_kill_enemy();
+        return i;
       }
     }
-    if(i == 6){
-       return posRobot[i-1];
-    }
-    return posRobot[i];
+    return i;
   }
+  
 
   void robotColiPJ(PVector[] pos_r, float size_r) {
     for (int i=0; i<6; i++) {
